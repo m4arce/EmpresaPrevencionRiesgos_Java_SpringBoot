@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M6_Spring</title>
+    <link th:replace="layout/templateLayout :: link-bootstrap">
+</head>
+<body>
+
+<header th:replace="layout/templateLayout :: nav-general"></header>
+
+<br>
+<br>
+
+<div class="position-relative">
+    <h1 class="text-center">CAPACITACION EN PREVENCION DE RIESGOS</h1>
+</div>
+
+
+    <div class="col position-relative">
+        <div class="card h-100">
+            
+           <h1 class="card-title text-center">**ACCESO DENEGADO**</h1>
+           <h5 class="card-title text-center">Su usuario no tiene permiso para acceder a esta información</h5>
+                
+        </div>
+    </div>
+ 
+
+
+<br>
+<br>
+
+<footer th:replace="layout/templateLayout :: footer"></footer>
+
+<script th:replace="layout/templateLayout :: script-bootstrap1"></script>
+<script th:replace="layout/templateLayout :: script-bootstrap2"></script>
+
+</body>
+</html>

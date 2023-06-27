@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M6_Spring</title>
+    <link th:replace="layout/templateLayout :: link-bootstrap">
+</head>
+<body>
+
+<header th:replace="layout/templateLayout :: nav-general"></header>
+
+<br>
+<br>
+
+<div class="position-relative">
+    <h1 class="text-center">REVISION</h1>
+</div>
+<br>
+<br>
+
+<!-- Card que contiene form de crear capacitacion, el que debe enviar la informacion hacia la base de datos para ejecutar un metodo create -->
+<div class="row row-cols-1 row-cols-md-1">
+    <div class="col">
+        <div class="card h-100 bg-secondary mx-auto" style="width: 400px;">
+            <div class="card-body ">
+                <h5 class="card-title text-center">REVISION</h5>
+                <form th:action="@{/guardar-revision}" method="post" th:object="${revision}">
+                    <div class="row mb-3">
+                    	<input type="hidden" name="idrevision" th:field="*{idrevision}">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="nombrerevision"
+                                   placeholder="Nombre Revision" th:field="*{nombrerevision}" required>
+                            <span th:if="${#fields.hasErrors('nombrerevision')}" th:errors="*{nombrerevision}">Error Revision</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="detalle"
+                                   placeholder="Detalle" th:field="*{detalle}" required>
+                            <span th:if="${#fields.hasErrors('detalle')}" th:errors="*{detalle}">Error Detalle</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+
+							<div class="col-sm-10 mx-auto">
+
+								<select class="form-select" name="estado" aria-label="Default select example" th:field="*{estado}" required>
+									<option value="" selected>Elige un Estado</option>
+									<option th:value="1">1 (sin problemas)</option>
+									<option th:value="2">2 (con observaciones)</option>
+									<option th:value="3">3 (no aprueba)</option>
+								</select>
+
+							</div>
+					</div>       
+
+                    <div class="col-sm-10 mx-auto text-center">
+                        <button type="submit" class="btn btn-primary col-sm-5">Guardar</button>
+                        <button type="reset" class="btn btn-primary col-sm-5">Cancelar</button>
+                        <br>
+                        <br>
+                        <a th:href="@{/lista-revisiones}" class="btn btn-primary col-sm-5" role="button" aria-pressed="true">Regresar</a>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<footer th:replace="layout/templateLayout :: footer"></footer>
+
+<script th:replace="layout/templateLayout :: script-bootstrap1"></script>
+<script th:replace="layout/templateLayout :: script-bootstrap2"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M6_Spring</title>
+    <link th:replace="layout/templateLayout :: link-bootstrap">
+</head>
+<body>
+
+<header th:replace="layout/templateLayout :: nav-general"></header>
+
+<br>
+<br>
+
+<div class="position-relative">
+    <h1 class="text-center">CAPACITACION EN PREVENCION DE RIESGOS</h1>
+</div>
+
+<br>
+<br>
+
+<!-- Aplicacion de Cards para mostrar la informacion de presentacion de la empresa -->
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card h-100">
+            <img
+                    src="https://img.freepik.com/foto-gratis/constructor-masculino-uniforme-jeans-guantes-casco-mano-vista-frontal_176474-10062.jpg"
+                    class="card-img-top" alt="prevencion2">
+            <div class="card-body">
+                <h5 class="card-title">QUE HACEMOS</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Mauris eget velit et ipsum vestibulum condimentum
+                    quis eget elit. Morbi vulputate pulvinar semper. In ullamcorper
+                    diam at malesuada viverra. Morbi euismod pellentesque mauris, non
+                    euismod lorem. Proin ut consectetur arcu, ac vulputate mauris.
+                    Phasellus ante magna, aliquam nec maximus ut, blandit vel libero.
+                    Aenean egestas nisi ac vestibulum viverra. Ut gravida hendrerit
+                    pulvinar. Phasellus vel ex est. Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas.
+                    Nam a pulvinar ante. Sed interdum dui vitae mattis pellentesque.
+                    Duis finibus metus purus, quis pharetra sem rhoncus in. Duis vel
+                    tincidunt elit, nec dictum nulla.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img
+                    src="https://img.freepik.com/foto-gratis/retrato-trabajador-fabrica-equipo-proteccion-sosteniendo-thumbs-up-sala-produccion_342744-147.jpg"
+                    class="card-img-top" alt="prevencion3">
+            <div class="card-body">
+                <h5 class="card-title">QUIENES SOMOS</h5>
+                <p class="card-text">Aliquam faucibus blandit nulla nec
+                    tristique. Sed in imperdiet ipsum, id maximus lectus. Integer non
+                    arcu vitae mi malesuada feugiat. Nam erat purus, porttitor id
+                    molestie ut, laoreet et ante. Aliquam ut sem eleifend metus
+                    rhoncus laoreet. Integer eget quam aliquet, tempus nisi et,
+                    egestas lorem. Nunc vestibulum tortor non nulla vehicula pulvinar.
+                    Curabitur maximus rutrum magna, id rutrum tortor porta ac. Ut quis
+                    venenatis velit. Quisque libero nulla, faucibus varius volutpat
+                    ac, malesuada sed neque.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card h-100">
+            <img
+                    src="https://img.freepik.com/foto-gratis/casco-construccion-seguridad-vista-superior-mascara-medica_23-2148784096.jpg"
+                    class="card-img-top" alt="prevencion1">
+            <div class="card-body">
+                <h5 class="card-title">COMO TRABAJAMOS</h5>
+                <p class="card-text">Proin ut nisl euismod, ullamcorper tortor
+                    ac, posuere turpis. Pellentesque vestibulum, risus vitae imperdiet
+                    venenatis, sem ligula facilisis diam, et consectetur lorem diam ac
+                    turpis. Vestibulum ultricies felis non eleifend pulvinar. Nullam
+                    elit ex, ornare nec magna sit amet, dictum malesuada risus.
+                    Suspendisse non sagittis massa. Vivamus viverra mattis ante a
+                    porttitor. Donec sed mi elementum, consectetur sapien eu, volutpat
+                    purus.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer th:replace="layout/templateLayout :: footer"></footer>
+
+<script th:replace="layout/templateLayout :: script-bootstrap1"></script>
+<script th:replace="layout/templateLayout :: script-bootstrap2"></script>
+
+</body>
+</html>

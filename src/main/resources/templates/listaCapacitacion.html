@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>M6_Spring</title>
+  <link th:replace="layout/templateLayout :: link-bootstrap">
+</head>
+<body>
+
+<header th:replace="layout/templateLayout :: nav-general"></header>
+
+<br>
+<br>
+
+<div class="row row-cols-1 row-cols-md-1">
+  <div class="col">
+    <div class="card h-100 mx-auto" style="width: 1200px;">
+      <div class="card-body ">
+        <div class="position-relative">
+          <h1 class="text-center">LISTA CAPACITACIONES</h1> 
+          <a th:href="@{/crear-capacitacion}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Crear Capacitacion</a>         
+          
+        </div>
+        
+        <br>
+
+        <!-- Tabla que contiene datos para efectos de lista -->
+        <table class="table">
+          <thead class="table-secondary">
+          <tr>
+            <th>Nombre Curso</th>
+            <th>Nombre Docente</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Termino</th>
+            <th>Valor Curso</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+
+          </tr>
+          </thead>
+
+          <tbody>
+
+           <tr th:each="capa : ${capacitaciones}">
+              <td th:text="${capa.curso}"></td>
+             <td th:text="${capa.docente}"></td>
+             <td th:text="${capa.inicio}"></td>
+             <td th:text="${capa.termino}"></td>
+             <td th:text="${capa.precio}"></td>
+             <td><a class="btn btn-primary" role="button" th:href="@{/editar-capacitacion/} + ${capa.idcapacitaciones}" th:text="Editar"></a></td>
+             <td><a class="btn btn-primary" role="button" th:href="@{/eliminar-capacitacion(idcapacitaciones=${capa.idcapacitaciones})}" th:text="Eliminar"></a></td>
+
+
+            </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+      <div class="text-center" th:if="${capacitaciones == null or capacitaciones.empty}">
+        <p>La Lista de capacitaciones esta vacia</p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+
+<footer th:replace="layout/templateLayout :: footer"></footer>
+
+<script th:replace="layout/templateLayout :: script-bootstrap1"></script>
+<script th:replace="layout/templateLayout :: script-bootstrap2"></script>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>M6_Spring</title>
+    <link th:replace="layout/templateLayout :: link-bootstrap">
+</head>
+<body>
+
+<header th:replace="layout/templateLayout :: nav-general"></header>
+
+<br>
+<br>
+
+<div class="position-relative">
+    <h1 class="text-center">CAPACITACION</h1>
+</div>
+<br>
+<br>
+
+<!-- Card que contiene form de crear capacitacion, el que debe enviar la informacion hacia la base de datos para ejecutar un metodo create -->
+<div class="row row-cols-1 row-cols-md-1">
+    <div class="col">
+        <div class="card h-100 bg-secondary mx-auto" style="width: 400px;">
+            <div class="card-body ">
+                <h5 class="card-title text-center">CAPACITACION</h5>
+                <form th:action="@{/guardar-capacitacion}" method="post" th:object="${capacitacion}">
+                    <div class="row mb-3">
+                    	<input type="hidden" name="idcapacitaciones" th:field="*{idcapacitaciones}">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="curso"
+                                   placeholder="Nombre Curso" th:field="*{curso}" required>
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="docente"
+                                   placeholder="Nombre Docente" th:field="*{docente}" required>
+                            <span th:if="${#fields.hasErrors('docente')}" th:errors="*{docente}">Error Docente</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="inicio"
+                                   placeholder="Fecha Inicio" th:field="*{inicio}" required>
+                            <span th:if="${#fields.hasErrors('inicio')}" th:errors="*{inicio}">Error Fecha Inicio</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="termino"
+                                   placeholder="Fecha Termino" th:field="*{termino}" required>
+                            <span th:if="${#fields.hasErrors('termino')}" th:errors="*{termino}">Error Fecha Termino</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-sm-10 mx-auto">
+                            <input type="text" class="form-control" name="precio"
+                                   placeholder="Valor Curso" th:field="*{precio}" required>
+                            <span th:if="${#fields.hasErrors('precio')}" th:errors="*{precio}">Error Precio</span>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-10 mx-auto text-center">
+                        <button type="submit" class="btn btn-primary col-sm-5">Guardar</button>
+                        <button type="reset" class="btn btn-primary col-sm-5">Cancelar</button>
+                        <br>
+                        <br>
+                        <a th:href="@{/lista-capacitaciones}" class="btn btn-primary col-sm-5" role="button" aria-pressed="true">Regresar</a>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+
+<footer th:replace="layout/templateLayout :: footer"></footer>
+
+<script th:replace="layout/templateLayout :: script-bootstrap1"></script>
+<script th:replace="layout/templateLayout :: script-bootstrap2"></script>
+
+</body>
+</html>
